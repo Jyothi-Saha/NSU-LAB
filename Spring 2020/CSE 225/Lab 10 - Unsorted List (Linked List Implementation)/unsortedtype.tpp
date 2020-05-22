@@ -109,6 +109,9 @@ void UnsortedType<ItemType>::ResetList(){
 template <class ItemType>
 bool UnsortedType<ItemType>::GetNextItem(ItemType& item){
 
+    if(LengthIs()==0)
+        return false;
+
     if (currentPos == NULL)
         currentPos = listData;
     else if(currentPos->next == NULL)
